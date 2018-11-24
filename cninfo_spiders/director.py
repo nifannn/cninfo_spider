@@ -129,7 +129,7 @@ class DirectorSpider(BaseSpider):
 	def crawl_all_and_save(self, path, relation_parse=False, debug=False, show_info=True):
 		self.crawl_all(relation_parse, debug, show_info).save(path, show_info=show_info)
 
-	def crawl_companies(self, codes, relation_parse=False, reset=False, debug=False, show_info=True):
+	def crawl(self, codes, relation_parse=False, reset=False, debug=False, show_info=True):
 		if reset:
 			self.reset()
 		if show_info:
@@ -149,8 +149,8 @@ class DirectorSpider(BaseSpider):
 		
 		return self
 
-	def crawl_companies_and_save(self, codes, path, relation_parse=False,
+	def crawl_and_save(self, codes, path, relation_parse=False,
 								 reset=False, debug=False, mode='w', show_info=True):
-		self.crawl_companies(codes, relation_parse, reset, debug, show_info).save(path, mode=mode, show_info=show_info)
+		self.crawl(codes, relation_parse, reset, debug, show_info).save(path, mode=mode, show_info=show_info)
 			
 		
