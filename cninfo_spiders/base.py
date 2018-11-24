@@ -74,7 +74,7 @@ class BaseSpider(object):
 		if not (path is None):
 			self.to_csv(path, mode=mode)
 			if show_info:
-				self._log_info('Saved in {}.'.format(path))
+				self._log_info('Saved in {} .'.format(path))
 
 	def reset(self):
 		self._records = []
